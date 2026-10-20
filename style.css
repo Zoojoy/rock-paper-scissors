@@ -1,0 +1,146 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 60px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: start;
+  align-items: center;
+  gap: 24px;
+  max-width: 850px;
+  margin-inline: auto;
+
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  color: #f8fafc;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-align: center;
+}
+
+/* ===== Scoreboard ===== */
+
+.scoreboard {
+  grid-column: 1 / -1;
+  padding: 24px;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+}
+
+/* ===== Round result ===== */
+
+.result {
+  grid-column: 1 / -1;
+  min-height: 110px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  background: #172338;
+  color: #93c5fd;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* ===== Choice buttons ===== */
+
+.choice-button {
+  min-width: 0;
+  min-height: 100px;
+  padding: 20px 10px;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.rock-button {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+}
+
+.paper-button {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.scissors-button {
+  background: linear-gradient(135deg, #22c55e, #15803d);
+}
+
+.choice-button:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.12);
+  box-shadow: 0 10px 25px rgb(0 0 0 / 25%);
+}
+
+.choice-button:active {
+  transform: scale(0.96);
+}
+
+.choice-button:focus-visible,
+.reset-button:focus-visible {
+  outline: 3px solid #f8fafc;
+  outline-offset: 4px;
+}
+
+/* ===== Reset button ===== */
+
+.reset-button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  padding: 14px 30px;
+  border: 1px solid #475569;
+  border-radius: 12px;
+  background: #334155;
+  color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.reset-button:hover {
+  background: #475569;
+  transform: translateY(-2px);
+}
+
+/* ===== Small screens ===== */
+
+@media (max-width: 520px) {
+  body {
+    padding: 32px 14px;
+    gap: 14px;
+  }
+
+  .scoreboard {
+    font-size: 1.1rem;
+    padding: 18px 8px;
+  }
+
+  .result {
+    min-height: 90px;
+    padding: 16px 8px;
+    font-size: 1rem;
+  }
+
+  .choice-button {
+    min-height: 85px;
+    padding: 12px 4px;
+    font-size: 0.9rem;
+    border-radius: 12px;
+  }
+}
